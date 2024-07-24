@@ -233,7 +233,7 @@ func chosenView(m fetchModel) string {
 	var msg string
 	label := fmt.Sprintf("%v Crawling most excited %s porject about today in github", emoji.Crocodile, codeLanguage[m.choice])
 	if m.loaded {
-		label = fmt.Sprintf("Prefetch %d %s projects success,waiting for ", m.resultCount, codeLanguage[m.choice])
+		label = fmt.Sprintf("Prefetch %d %s projects success,waiting for navigate or press [ENTER]", m.resultCount, codeLanguage[m.choice])
 	}
 	if m.error != nil {
 		label = fmt.Sprintf("Error: %s. \nExiting in %s seconds...", m.error.Error(), ticksStyle.Render(strconv.Itoa(m.ticks)))

@@ -37,13 +37,13 @@ func (r repoItem) String() string {
 }
 
 func (r repoItem) Title() string {
-	return fmt.Sprintf("%v %s", emoji.Rainbow, r.Name)
+	return fmt.Sprintf("%v %s", emoji.LargeOrangeDiamond, r.Name)
 }
 
 func (r repoItem) Description() string {
 	lang := fmt.Sprintf("%s%v", r.Lang, emoji.Laptop)
-	star := fmt.Sprintf("%s%v", r.Star, emoji.GlowingStar)
-	fork := fmt.Sprintf("%s%v", r.Fork, emoji.ForkAndKnife)
+	star := fmt.Sprintf("%s%v", r.Star, emoji.Star)
+	fork := fmt.Sprintf("%s%v", r.Fork, emoji.Wrench)
 	starToday := fmt.Sprintf("%s%v", r.TodayStar, emoji.Fire)
 	s := Trim(r.Desc, getRepoListWidth())
 	des := wrapText(s, uint(getRepoListWidth()))

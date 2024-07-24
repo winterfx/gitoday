@@ -76,7 +76,7 @@ func Init(key string) {
 }
 
 // Chat sends a request to the Dify API and prints the response
-func Chat(ctx context.Context, repoUrl string) (*ChatResponse, error) {
+func Chat(ctx context.Context, repoUrl string, retryCount int) (*ChatResponse, error) {
 
 	if _, ok := ctx.Deadline(); !ok {
 		var cancel context.CancelFunc
@@ -168,6 +168,9 @@ func Chat(ctx context.Context, repoUrl string) (*ChatResponse, error) {
 	err = json.Unmarshal([]byte(answer), cr)
 	if err != nil {
 		cr.Error = errors.Wrap(err, "json unmarshal error")
+		if retryCount > 0 {
+			return Chat(ctx, repoUrl, retryCount-1)
+		}
 		return cr, err
 
 	}

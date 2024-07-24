@@ -6,6 +6,7 @@ import (
 	"gitoday/global"
 	"gitoday/service"
 	"gitoday/ui/model"
+	"io"
 	"log"
 	"log/slog"
 	"os"
@@ -71,8 +72,8 @@ func initLogger(mode string) {
 		logger := slog.New(slog.NewJSONHandler(file, &slog.HandlerOptions{Level: slog.LevelDebug}))
 		slog.SetDefault(logger)
 	} else {
-		//disable log
-		logger := slog.New(slog.NewJSONHandler(os.Stdout, &slog.HandlerOptions{Level: slog.LevelInfo}))
+		//disable slog
+		logger := slog.New(slog.NewJSONHandler(io.Discard, nil))
 		slog.SetDefault(logger)
 	}
 

@@ -77,7 +77,7 @@ func NewModel() MainModel {
 
 func askAI(repoUrl string, channel chan *service.ChatResponse) {
 	slog.Debug("ask ai", slog.String("repoUrl", repoUrl))
-	ai, err := service.Chat(context.Background(), repoUrl)
+	ai, err := service.Chat(context.Background(), repoUrl,3)
 	if err != nil {
 		slog.Error("ask ai error", slog.String("repoUrl", repoUrl),
 			slog.String("original error", fmt.Sprintf("%T %V", errors.Cause(err), errors.Cause(err))),
