@@ -5,6 +5,7 @@ This is a straightforward CLI tool that fetches the trending GitHub repositories
 ## Install
 1. source code
    - Clone the repository
+   - Run `go mod tidy`
    - Run `go build -o gitoday`
    - Run `./gitoday -apiKey="xxx"`
 ## Usage
