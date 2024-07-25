@@ -9,8 +9,15 @@ This is a straightforward CLI tool that fetches the trending GitHub repositories
    - Run `go build -o gitoday`
    - Run `./gitoday -apiKey="xxx"`
 ## Usage
-![Usage Example](https://github.com/winterfx/gitoday/blob/main/usage.gif)
+![Usage Example](https://github.com/winterfx/gitoday/blob/main/doc/usage.gif)
 ## Document
+![](./doc/flow.png)
+
+1. Choose the programming language you are interested in from the list in the CLI.
+2. Fetch the trending repositories from GitHub.
+3. Analyze the repositories using Azure openAI by dify service.
+4. Display the analysis results in the CLI.
+
 ## Debugger
 ```bash
 $ dlv debug --headless --api-version=2 --listen=127.0.0.1:43000 .
