@@ -9,6 +9,7 @@ This is a straightforward CLI tool that fetches the trending GitHub repositories
    - Run `go build -o gitoday`
    - Run `./gitoday -apiKey="xxx"`
 ## Usage
+![](./usage.gif)
 ## Document
 ## Debugger
 ```bash
