@@ -1,7 +1,7 @@
 # gitoday
 
 ## Background
-This is a straightforward CLI tool that fetches the trending GitHub repositories for the current day by programming language. It also offers AI-powered analysis of these repositories, summarizing the information in a reader-friendly format.
+This is a straightforward CLI tool that fetches most excited GitHub repositories about today by programming language. It also offers AI-powered analysis of these repositories, summarizing the information in a reader-friendly format.
 ## Installation
 1. source code
    - Clone the repository
