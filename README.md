@@ -17,6 +17,7 @@ When browsing GitHub trending, the project descriptions only provide a vague ide
 2. Fetch the trending repositories from GitHub.
 3. Analyze the repositories using Azure openAI by dify service.
 4. Display the analysis results in the CLI.
+![](./doc/case.png)
 
 ## Debugger
 ```bash
