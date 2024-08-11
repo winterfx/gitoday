@@ -38,9 +38,6 @@ example:
 	"It provides several options to manage photos, such as grouping related photos, controlling the creation of Google Photos albums in Immich, and specifying inclusion or exclusion of partner-taken photos."],
 	"other":["rclone","gphotos-uploader-cli","gphotos-sync"]
 ],
-
-	"how":[],
-	"other":[]
 }
 当你写完之后，请再检查一下，确保你的回答是没有过多重复的内容和格式是否正确，请确保是json结构，请重新回答。
 `
