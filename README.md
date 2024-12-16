@@ -7,7 +7,7 @@ When browsing GitHub trending, the project descriptions only provide a vague ide
    - Clone the repository
    - Run `go mod tidy`
    - Run `go build -o gitoday`
-   - Run `./gitoday -apiKey="xxx"`
+   - Run `./gitoday`
 ## Usage
 ![Usage Example](https://github.com/winterfx/gitoday/blob/main/doc/usage.gif)
 ## Document

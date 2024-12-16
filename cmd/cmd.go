@@ -12,6 +12,7 @@ import (
 	"os"
 
 	tea "github.com/charmbracelet/bubbletea"
+	"github.com/joho/godotenv"
 )
 
 var helpText = fmt.Sprintf(`  
@@ -22,7 +23,7 @@ The tool requires two command line arguments:
 - h: This prints the help text.
 
 Example of usage:
-./gitoday -apiKey=xxxxx -mode=debug -preview=true
+./gitoday -mode=debug -preview=true
   
 Please make sure that the queue name is valid according to Azure's naming rules.  
 `)
@@ -33,7 +34,10 @@ func die() {
 
 }
 func Execute() {
-
+	err := godotenv.Load()
+	if err != nil {
+		panic(err)
+	}
 	flag.Usage = func() {
 		fmt.Fprintf(os.Stderr, "%s", helpText)
 	}
@@ -42,10 +46,9 @@ func Execute() {
 	var preview bool
 
 	flag.StringVar(&mode, "mode", "", "The environment to be used")
-	flag.StringVar(&apiKey, "apiKey", "", "The api key to be used,must be provided")
 	flag.BoolVar(&preview, "preview", false, "Use fake data, not fetch from github")
 	flag.Parse()
-
+	apiKey = os.Getenv("API_KEY")
 	if len(apiKey) == 0 {
 		die()
 	}
